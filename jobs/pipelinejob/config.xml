@@ -1,0 +1,37 @@
+<?xml version='1.1' encoding='UTF-8'?>
+<flow-definition plugin="workflow-job@1254.v3f64639b_11dd">
+  <actions>
+    <org.jenkinsci.plugins.pipeline.modeldefinition.actions.DeclarativeJobAction plugin="pipeline-model-definition@2.2118.v31fd5b_9944b_5"/>
+    <org.jenkinsci.plugins.pipeline.modeldefinition.actions.DeclarativeJobPropertyTrackerAction plugin="pipeline-model-definition@2.2118.v31fd5b_9944b_5">
+      <jobProperties/>
+      <triggers/>
+      <parameters/>
+      <options/>
+    </org.jenkinsci.plugins.pipeline.modeldefinition.actions.DeclarativeJobPropertyTrackerAction>
+  </actions>
+  <description></description>
+  <keepDependencies>false</keepDependencies>
+  <properties/>
+  <definition class="org.jenkinsci.plugins.workflow.cps.CpsFlowDefinition" plugin="workflow-cps@3536.vb_8a_6628079d5">
+    <script>pipeline {
+    agent none
+    stages {
+        agent { label &apos;build&apos;}
+        stage &apos;build&apos; {
+            steps {
+                sh &apos;mvn pakage&apos;
+                sh &apos;scp -r target/hello-world-war-1.0.0.war deploy@172.31.34.126:/opt/tomcat/webapps&apos;
+            }    
+        stage &apos;deploy&apos; {
+            agent { label &apos;deploy&apos; }
+            steps {
+                sh &apos;sh /opt/tomcat/bin/startuo.sh&apos;
+            }
+        }
+    }
+}</script>
+    <sandbox>true</sandbox>
+  </definition>
+  <triggers/>
+  <disabled>false</disabled>
+</flow-definition>

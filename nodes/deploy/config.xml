@@ -1,0 +1,21 @@
+<?xml version='1.1' encoding='UTF-8'?>
+<slave>
+  <name>deploy</name>
+  <description>deploy for me</description>
+  <remoteFS>/home/deploy</remoteFS>
+  <numExecutors>10</numExecutors>
+  <mode>NORMAL</mode>
+  <retentionStrategy class="hudson.slaves.RetentionStrategy$Always"/>
+  <launcher class="hudson.plugins.sshslaves.SSHLauncher" plugin="ssh-slaves@2.854.v7fd446b_337c9">
+    <host>172.31.46.138</host>
+    <port>22</port>
+    <credentialsId>0e888041-f565-4dd7-bf5b-115660af1d40</credentialsId>
+    <launchTimeoutSeconds>60</launchTimeoutSeconds>
+    <maxNumRetries>10</maxNumRetries>
+    <retryWaitTime>15</retryWaitTime>
+    <sshHostKeyVerificationStrategy class="hudson.plugins.sshslaves.verifiers.NonVerifyingKeyVerificationStrategy"/>
+    <tcpNoDelay>true</tcpNoDelay>
+  </launcher>
+  <label>deploy</label>
+  <nodeProperties/>
+</slave>

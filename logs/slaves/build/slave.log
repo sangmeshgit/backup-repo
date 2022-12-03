@@ -1,0 +1,12 @@
+SSHLauncher{host='172.31.45.171', port=22, credentialsId='ffb3de73-6c37-405c-bcb7-479d46e77e72', jvmOptions='', javaPath='', prefixStartSlaveCmd='', suffixStartSlaveCmd='', launchTimeoutSeconds=60, maxNumRetries=10, retryWaitTime=15, sshHostKeyVerificationStrategy=hudson.plugins.sshslaves.verifiers.NonVerifyingKeyVerificationStrategy, tcpNoDelay=true, trackCredentials=true}
+[12/03/22 11:55:13] [SSH] Opening SSH connection to 172.31.45.171:22.
+No route to host (Host unreachable)
+SSH Connection failed with IOException: "No route to host (Host unreachable)", retrying in 15 seconds. There are 10 more retries left.
+No route to host (Host unreachable)
+SSH Connection failed with IOException: "No route to host (Host unreachable)", retrying in 15 seconds. There are 9 more retries left.
+No route to host (Host unreachable)
+SSH Connection failed with IOException: "No route to host (Host unreachable)", retrying in 15 seconds. There are 8 more retries left.
+No route to host (Host unreachable)
+SSH Connection failed with IOException: "No route to host (Host unreachable)", retrying in 15 seconds. There are 7 more retries left.
+No route to host (Host unreachable)
+SSH Connection failed with IOException: "No route to host (Host unreachable)", retrying in 15 seconds. There are 6 more retries left.
